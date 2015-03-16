@@ -1,6 +1,6 @@
 # Simple Clickatell OTP Example
 
-This is an simple PHP example of how to create a OTP reminder for forgoton passwords on your website.
+This is an simple PHP example of how to create a OTP reminder for forgotten passwords on your website.
 
 # Create a Clickatell account
 
