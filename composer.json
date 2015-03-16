@@ -1,0 +1,21 @@
+{
+    "name": "holla22/clickatell-otp",
+    "description": "simple otp system",
+    "authors": [
+        {
+            "name": "Morne Zeelie",
+            "email": "holla22@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "curl/curl": "dev-master",
+        "twbs/bootstrap": "3.3.*@dev",
+        "rych/random": "1.0.*@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Otp\\": "src"
+        }
+    }
+}
