@@ -1,1 +1,1 @@
-# clickatell-opt-example
+# Simple Clickatell OTP Example
