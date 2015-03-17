@@ -4,6 +4,7 @@
  * @package    Clickatell OTP example
  * @author     Morne Zeelie <holla22@gmail.com>
  * @license    http://opensource.org/licenses/MIT  MIT License
+ * @link       https://github.com/holla22/clickatell-opt-example
  * @version    1.0.0
 */
 
@@ -77,7 +78,7 @@ if (isset($_POST['email']))
 
     // send the text/sms message with OTP to the users phone
     // replace the clickatell user details below with your account details.
-    $oMyOTP = new Otp\Otp($username, $password, $apiId); //password:VXacglw1
+    $oMyOTP = new Otp\Otp($username, $password, $apiId);
 
     // the message was sent to the users mobile
     $oMyOTP->sendMessage($phone, 'Your OTP: ' . $randomString);
