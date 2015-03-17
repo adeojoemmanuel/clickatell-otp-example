@@ -1,6 +1,6 @@
 {
     "name": "holla22/clickatell-otp",
-    "description": "simple otp system",
+    "description": "Simple OTP system using Clickatell HTTP API",
     "authors": [
         {
             "name": "Morne Zeelie",
