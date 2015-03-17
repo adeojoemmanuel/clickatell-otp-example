@@ -5,8 +5,8 @@ This is an simple PHP example of how to create a OTP reminder for forgotten pass
 # Create a Clickatell account
 
 * Go to  http://www.clickatell.com and create a Developers Central -> International account.
-* Buy credits to be able to send out messages. You do get free 10 free message for testing but you can't change the text.
-* You should have a default HTTP API create which you can access and get the API details to use in this example.
+* Buy credits to be able to send out messages. You do get 10 free messages for testing but you can't change the text.
+* You should have a default HTTP API created which you can access and get the API details to use in this example.
 
 # Usage Example
 To send a sms we need to initialize our simple OTP class with our Clickatell HTTP API details
@@ -38,3 +38,12 @@ The login.php is the frontend website, an example of a forgot password page. On 
 
 Take the random number you've received and enter it in the "Please provide your OTP" field and click on "Submit OTP" button. On line 108 of the myotp.php file you can add functionality to send the user it's new password.
 
+# Install via Composer
+
+Available on Packagist here: https://packagist.org/packages/holla22/clickatell-otp
+
+add the following to your composer.json file and run composer update command
+
+```
+require: "holla22/clickatell-otp": "dev-master"
+```
