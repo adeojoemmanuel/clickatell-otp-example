@@ -96,7 +96,7 @@ THE SOFTWARE.
 
       </div>
 
-        <div class="email-retreive">
+        <div class="email-retreive myemail">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">@</span>
               <input type="text" class="form-control email" placeholder="Enter your registered email to retreive your password" aria-describedby="sizing-addon1">
@@ -107,7 +107,8 @@ THE SOFTWARE.
 
         <br>
 
-        <div class="email-retreive">
+        <div class="email-retreive myotp" style="display:none;">
+          <h2 class="otp-message">Enter your One Time Pin to reset your Password</h2>
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">#</span>
               <input type="text" class="form-control specialcode" placeholder="Please provide your OTP that was sent to your mobile?" aria-describedby="sizing-addon1">
@@ -130,12 +131,13 @@ THE SOFTWARE.
     <script type="text/javascript">
 
 
-        //console.log(emailsend);
         $( ".email-submit" ).on( "click", function() {
           var emailsend = $( "input.email" ).val();
             $.post( "myotp.php", { email: emailsend })
               .done(function( data ) {
                 console.log( data);
+                $('.myemail').hide();
+                $('.myotp').show();
               });
         });
 
@@ -143,11 +145,11 @@ THE SOFTWARE.
 
         $( ".opt-submit" ).on( "click", function() {
            var otpsend = $( ".specialcode" ).val();
-/*          console.log( 'CLICK OTP' );
-          console.log(otpsend);*/
+
             $.post( "myotp.php", { otps: otpsend })
               .done(function( data ) {
                 console.log( data);
+                $('.otp-message').html('Password reset instructions mailed to your inbox');
               });
         });
 
