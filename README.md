@@ -47,3 +47,35 @@ In the example folder you will see two files myotp.php which contains the logic 
 The login.php is the frontend website, an example of a forgot password page. On this page you can send a OTP to the mobile number of the user you've added in the user table of mysql. Just add the email of the user, click on the "Submit Email" button and it will send an sms with a random string to the users mobile number (International format without the + sign).
 
 Take the random number you've received and enter it in the "Please provide your OTP" field and click on "Submit OTP" button. On line 108 of the myotp.php file you can add functionality to send the user it's new password.
+
+# Usage in Laravel 5
+Simply Install laravel 5 and add the following to the composer.json file.
+
+```php
+    "holla22/clickatell-otp": "dev-master",
+		"curl/curl": "dev-master",
+		"twbs/bootstrap": "3.3.*@dev",
+		"rych/random": "1.0.*@dev",
+		"guzzlehttp/guzzle": "~4.0"
+```
+
+Now run the composer update command to setup your newly added packages.
+
+To use the clickatell OTP package in your controller simply add the following to the top of your controller file.
+
+```php
+  use Otp\Otp;
+  use Rych\Random\Random;
+```
+
+At this point you can start using the Class like this:
+
+```php
+    // send the text/sms message with OTP to the users phone
+    // replace the clickatell user details below with your account details.
+    $oMyOTP = new Otp($username, $password, $apiId);
+
+    // the message was sent to the users mobOile
+    $oMyOTP->sendMessage($mobileno, $randomString );
+
+```
