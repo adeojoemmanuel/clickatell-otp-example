@@ -81,7 +81,7 @@ if (isset($_POST['email']))
     $oMyOTP = new Otp\Otp($username, $password, $apiId);
 
     // the message was sent to the users mobile
-    $oMyOTP->sendMessage($phone, 'Your OTP: ' . $randomString);
+    $oMyOTP->sendMessage($phone, $randomString);
 
 }
 
