@@ -98,14 +98,11 @@ if (isset($_POST['otps']))
     {
         // query for the OTP, currently we are just quering for the secret to
         // make it simple. We should also query for the email to ensure uniqueness.
-        $aDataOTP = $conn->query("SELECT secret FROM users WHERE secret = {$conn->quote(base64_encode($submitedOtp))}");
+        $aDataOTP = $conn->query("SELECT email FROM users WHERE secret = {$conn->quote(base64_encode($submitedOtp))}");
 
         foreach($aDataOTP as $row)
         {
-            if(base64_decode( $row['secret'] ) == $_POST['otps'])
-                // send out the password via email for the user.
-                // you can add email functionality here.
-                echo "It Matches, so send a email";
+            //send an email to $row['email'] with a new password or a reset password link
         }
     }
     catch(PDOException $e) {
